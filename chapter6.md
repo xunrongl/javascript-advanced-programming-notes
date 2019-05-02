@@ -1,20 +1,15 @@
-# Chapter 6 Object-Oriented Design
+# 6.OOP
 
 ## Object
 
 ### Property
 
-- Data Property
-
-  - Configurable
-
-  - Enumerable: for-in
-
-  - Writable
-
-  - Value
-
-  - ```javascript
+* Data Property
+  * Configurable
+  * Enumerable: for-in
+  * Writable
+  * Value
+  * ```javascript
     var person = {
       name: "Tom"
     };
@@ -29,18 +24,12 @@
 
     //一旦把configurable设置为false，就不能改为true了
     ```
-
-- Accessor Property
-
-  - Configurable
-
-  - Enumerable
-
-  - Get
-
-  - Set
-
-  - ```javascript
+* Accessor Property
+  * Configurable
+  * Enumerable
+  * Get
+  * Set
+  * ```javascript
     var book = {
       _year: 2004,  //_means this property is only accessible by functions
       edition: 1
@@ -60,12 +49,9 @@
     book.year = 2005;
     alert(book.edition); // 2
     ```
-
-- Object.defineProperties
-
-- Object.getOwnPropertyDescriptor()
-
-  - ```javascript
+* Object.defineProperties
+* Object.getOwnPropertyDescriptor\(\)
+  * ```javascript
     var book = {};
     Object.defineProperties(book, {
       _year: {
@@ -93,14 +79,15 @@
     alert(typeof descriptor.get); //undefined
     ```
 
-```
+```text
 var descriptor = Object.getOwnPropertyDescriptor(book, "year");
 alert(descriptor.value); //undefined
 alert(descriptor.configurable);  //false
 alert(typeof descriptor.get); //"function"
-​```
+​
 ```
 
+```text
 ## Create Object
 
 ### Factory Pattern
@@ -122,7 +109,7 @@ Solve the problem on creating similar objects, but fails to recognize objects
 
 ### Constructor Pattern
 
-- ```javascript
+* ```javascript
   function Person(name, age) {
     this.name = name;
     this.age = age;
@@ -141,15 +128,12 @@ Solve the problem on creating similar objects, but fails to recognize objects
     alert(this.name);
   }
   ```
-
-- cons: 因为js中函数是对象，所以每定义一个函数，也就是实例化了一个对象。会导致不同实例上的同名函数是不相等的
+* cons: 因为js中函数是对象，所以每定义一个函数，也就是实例化了一个对象。会导致不同实例上的同名函数是不相等的
 
 ### Prototype Pattern
 
-- 每个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。
-
-
-- ```javascript
+* 每个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。
+* ```javascript
   function Person() {
   }
   Person.prototype.name = "Tom";
@@ -200,7 +184,7 @@ Solve the problem on creating similar objects, but fails to recognize objects
   alert(person2.frends); //"Jack", "Tony", "Van"
   ```
 
-```
+```text
 - https://pic3.zhimg.com/3f1d54bcf3b324540e263390f318f92a_r.png
 
 ### Constructor + Prototype Pattern
@@ -252,15 +236,11 @@ console.log(o.toString); // no errors, Object has toString
 console.log(o.push("c")); //error, Object does not even has this function
 ```
 
-- 每个对象都有一个指向它的原型对象的内部链接，这个原型对象又有自己的原型，直到某个对象的原型为null为止。所以当你试图访问一个对象的属性的时候，他不仅仅在该对象上搜寻，还会搜寻该对象的原型。以此层层向上的搜索。
-
-- Object is the default prototype
-
-- use `instanceof` and `isPrototypeOf` to confirm the relationship between prototype and instance
-
-- 不能使用对象字面量创建原型方法
-
-  - ```javascript
+* 每个对象都有一个指向它的原型对象的内部链接，这个原型对象又有自己的原型，直到某个对象的原型为null为止。所以当你试图访问一个对象的属性的时候，他不仅仅在该对象上搜寻，还会搜寻该对象的原型。以此层层向上的搜索。
+* Object is the default prototype
+* use `instanceof` and `isPrototypeOf` to confirm the relationship between prototype and instance
+* 不能使用对象字面量创建原型方法
+  * ```javascript
     // this will rewrite the prototype chain, SubType is the instance of Object instead of 
     SubType.prototype = {
       getSubValue: function() {
@@ -268,12 +248,9 @@ console.log(o.push("c")); //error, Object does not even has this function
       }
     }
     ```
-
-- Cons：
-
-  - 原型中包含引用类型值类型会带来问题
-
-    - ```javascript
+* Cons：
+  * 原型中包含引用类型值类型会带来问题
+    * ```javascript
       function SuperType() {
         this.colors = ["red", "blue"];
       }
@@ -289,16 +266,13 @@ console.log(o.push("c")); //error, Object does not even has this function
       var instance2 = new SubType();
       alert(instance2.colors); //red, blue, black
       ```
-
-    - ​
-
-  - 无法在不影响所有对象实例的情况下，给SuperType的构造函数传递参数
-
-  - 所以很少单独实用原型链
+    * ​
+  * 无法在不影响所有对象实例的情况下，给SuperType的构造函数传递参数
+  * 所以很少单独实用原型链
 
 ### Constructor Stealing
 
-- use call or apply
+* use call or apply
 
 ```javascript
 function SuperType() {
@@ -308,7 +282,7 @@ function SuperType() {
 function SubType() {
   //inherit SuperType
   SuperType.call(this);
-  
+
   //you can also use this to pass the parameters
   //SuperType.call(this, "Tom")
 }
@@ -320,7 +294,7 @@ var instance2 = new SubType();
 alert(instance2.colors); //red, blue
 ```
 
-- However, in this way, all the functions are in constructor
+* However, in this way, all the functions are in constructor
 
 ### Combination inheritance
 
@@ -357,8 +331,7 @@ instance2.sayName(); //Jack
 instance2.sayAge(); //22
 ```
 
-
-
 ### Parasitic Inheritance
 
 ### Parasitic Combination Inheritance
+

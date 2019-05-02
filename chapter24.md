@@ -1,7 +1,8 @@
-# 24. Best Practice
+# 24.Best Practices
 
-- do not compare with null
-- scope
-  - avoid global search
-    - if you have multiple document.getElementsById or so, use `var doc = document` to reduces multiple referrences to document objects
-- For large changes in DOM, innerHTML is much faster than createElement and appendChild
+* do not compare with null
+* scope
+  * avoid global search
+    * if you have multiple document.getElementsById or so, use `var doc = document` to reduces multiple referrences to document objects
+* For large changes in DOM, innerHTML is much faster than createElement and appendChild
+

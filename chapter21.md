@@ -1,4 +1,4 @@
-# 21. AJAX and Comet
+# 21.AJAX and Comet
 
 ## XMLHttpRequest Object
 

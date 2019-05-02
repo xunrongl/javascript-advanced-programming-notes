@@ -1,4 +1,4 @@
-# 22. Advanced Skills
+# 22.Advanced Techniques
 
 ### Function binding
 
@@ -19,3 +19,4 @@ EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler));
 ### Function Currying
 
 ## Tamper-proof object
+

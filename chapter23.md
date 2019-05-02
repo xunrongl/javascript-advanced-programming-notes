@@ -1,6 +1,7 @@
-# 23. Offline Application and Client-side storage
+# 23.Offline Application and Client-Side Storage
 
-- navigaotr.onLine
-- application cache
-- Cookie
-- sessionStorage
+* navigaotr.onLine
+* application cache
+* Cookie
+* sessionStorage
+

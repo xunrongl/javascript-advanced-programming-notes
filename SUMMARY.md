@@ -1,7 +1,7 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
-* 1.What is Javascript
+* [1.What is Javascript](1.what-is-javascript.md)
 * [2.Javascript in HTML](chapter2.md)
 * [3.Language Basics](chapter3.md)
 * [4.Variables, Scope and Memory](chapter4.md)
@@ -9,17 +9,17 @@
 * [6.OOP](chapter6.md)
 * [7.Function Expression](chapter7.md)
 * [8.BOM](chapter8.md)
-* 9.Client Detection
+* [9.Client Detection](9.client-detection.md)
 * [10.DOM](chapter10.md)
 * [11.DOM Extension](chapter11.md)
 * [12.DOM2 and DOM3](chapter12.md)
 * [13.Events](chapter13.md)
 * [14.Forms](chapter14.md)
-* 15.Canvas
-* 16.HTML5
+* [15.Canvas](15.canvas.md)
+* [16.HTML5](16.html5.md)
 * [17.Error Handling and Debugging](chapter17.md)
-* 18.XML in Javascript
-* 19.ECMAScript for XML
+* [18.XML in Javascript](18.xml-in-javascript.md)
+* [19.ECMAScript for XML](19.ecmascript-for-xml.md)
 * [20.JSON](chapter20.md)
 * [21.AJAX and Comet](chapter21.md)
 * [22.Advanced Techniques](chapter22.md)

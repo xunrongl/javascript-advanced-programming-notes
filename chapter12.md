@@ -1,4 +1,4 @@
-# DOM2 and DOM3
+# 12.DOM2 and DOM3
 
 ## DOM Changes
 
@@ -21,19 +21,19 @@ value = myDiv.style.getPropertyValue(prop);
 
 ### CSSStyleSheet
 
-- document.styleSheets
-- CSSRule
+* document.styleSheets
+* CSSRule
 
 ### Element Size
 
-- offset dimension
-  - offsetHeight,  offsetTop
-  - offsetWidth, offsetLeft = border + padding + content
-- client dimension
-  - clientHeight, clientWidth = padding + content
-- scroll dimension
-  - scrollHeight, scrollWidth: the total height/Width without the scroll bar
-  - scrollLeft, scrollTop, 被隐藏在内容区域左侧/上方的像素数（包括内容区的边框），通过修改这个值，可以修改元素的滚动位置
+* offset dimension
+  * offsetHeight,  offsetTop
+  * offsetWidth, offsetLeft = border + padding + content
+* client dimension
+  * clientHeight, clientWidth = padding + content
+* scroll dimension
+  * scrollHeight, scrollWidth: the total height/Width without the scroll bar
+  * scrollLeft, scrollTop, 被隐藏在内容区域左侧/上方的像素数（包括内容区的边框），通过修改这个值，可以修改元素的滚动位置
 
 ## Traversal
 
@@ -44,3 +44,4 @@ value = myDiv.style.getPropertyValue(prop);
 ## Range
 
 ### Range in the DOM
+

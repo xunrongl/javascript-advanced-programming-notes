@@ -1,14 +1,14 @@
-# Event
+# 13.Events
 
 ## Event flow
 
-- event bubbling: event pass from leaf to the root in the DOM tree until the document obj
-- event capturing:from the root to the leaf that is actually clicked
-- event capturing -> target stage ->event bubbling，有两个机会在目标对象上操作事件
+* event bubbling: event pass from leaf to the root in the DOM tree until the document obj
+* event capturing:from the root to the leaf that is actually clicked
+* event capturing -&gt; target stage -&gt;event bubbling，有两个机会在目标对象上操作事件
 
 ## Event handler
 
-- DOM 0 level event handler
+* DOM 0 level event handler
 
 ```javascript
 // the event is captured during the bubbling 
@@ -17,7 +17,7 @@ btn.onclick = function () {
 }
 ```
 
-- DOM 2 level event handler
+* DOM 2 level event handler
 
 ```javascript
 btn.addEventListener("click", function() {
@@ -31,7 +31,7 @@ btn.removeEventListener("click", fuction(){ // the function has to be exactly th
 
 ## Event Object
 
-- 如果事件处理程序指定给了目标元素
+* 如果事件处理程序指定给了目标元素
 
 ```javascript
 btn.onclick = function(event) {
@@ -40,7 +40,7 @@ btn.onclick = function(event) {
 }
 ```
 
-- 如果事件处理程序指定给了父节点
+* 如果事件处理程序指定给了父节点
 
 ```javascript
 document.body.onclick = function(event) {
@@ -52,15 +52,11 @@ document.body.onclick = function(event) {
 }
 ```
 
-- 利用`event.type`可以在一个handler里通过switch处理多种events
-
-- `preventDefault()`
-
-- `stopPropagation()`
-
-- eventPhase
-
-  - ```javascript
+* 利用`event.type`可以在一个handler里通过switch处理多种events
+* `preventDefault()`
+* `stopPropagation()`
+* eventPhase
+  * ```javascript
     var btn = document.getElementById("myBtn");
     btn.onclick = function(event) {
       alert(event.eventPhase); // 2
@@ -79,7 +75,7 @@ document.body.onclick = function(event) {
 
 ## Event Type
 
-- load
+* load
 
 ```javascript
 EventUtil.addHandler(window, "load", function(event) {
@@ -90,17 +86,12 @@ EventUtil.addHandler(window, "load", function(event) {
 //image has onload has well
 ```
 
-- unload
-
-- resize
-
-- scroll
-
-- focus
-
-- MouseEvents
-
-  - ```javascript
+* unload
+* resize
+* scroll
+* focus
+* MouseEvents
+  * ```javascript
     EventUtil.addHandler(div, "click", function(event) {
       event = EventUtil.getEvent(event);
       alert("Client coordinates: " + event.clientX + "," + event.clientY);
@@ -109,35 +100,23 @@ EventUtil.addHandler(window, "load", function(event) {
     //event.pageX, event.pageY equals to clientX, clientY when there is no scroll
     //screenX, screenY
     ```
-
-  - RelatedElements when mouseover and mouseout
-
-- touchscreen
-
-- keyboard
-
-- textInput event
-
-- Mutation events
-
-  - removeChild, replaceChild
-  - appendChild, insertBefore
-
-- HTML5 events
-
-  - contextmenu
-
-- Device events
-
-  - orientationchange
-
-- touch and gesture events
+  * RelatedElements when mouseover and mouseout
+* touchscreen
+* keyboard
+* textInput event
+* Mutation events
+  * removeChild, replaceChild
+  * appendChild, insertBefore
+* HTML5 events
+  * contextmenu
+* Device events
+  * orientationchange
+* touch and gesture events
 
 ## Memory and performance
 
-- event delegation
-
-  - ```javascript
+* event delegation
+  * ```javascript
     <ul id="mylinks">
       <li id="1">Go</li>
       <li id="2">To</li>
@@ -156,8 +135,7 @@ EventUtil.addHandler(window, "load", function(event) {
       }
     })
     ```
-
-  - ​
+  * ​
 
 ## Simulate DOM event
 
